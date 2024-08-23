@@ -17,5 +17,5 @@ services:
       - "8888:8888"
     volumes:
       - ./data:/home/jovyan/data
-      - ./volumes/spark:/home/jovyan/work
+      - ./notebook:/home/jovyan/work
       - ./jars:/opt/spark/jars
