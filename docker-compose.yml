@@ -1,0 +1,21 @@
+services:
+  db:
+    image: mysql:9.0.1
+    environment:
+      MYSQL_ROOT_PASSWORD: gabzouugiazubgaz1561616&qsffsq
+      MYSQL_DATABASE: thegame
+      MYSQL_USER: thegameadministrator
+      MYSQL_PASSWORD: thegameadministratorpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./volumes/mysql/:/var/lib/mysql
+  spark:
+    image: jupyter/pyspark-notebook:x86_64-spark-3.5.0
+    ports:
+      - "4040:4040"
+      - "8888:8888"
+    volumes:
+      - ./data:/home/jovyan/data
+      - ./volumes/spark:/home/jovyan/work
+      - ./jars:/opt/spark/jars
