@@ -19,3 +19,12 @@ services:
       - ./data:/home/jovyan/data
       - ./notebook:/home/jovyan/work
       - ./jars:/opt/spark/jars
+  spark-monitoring:
+    image: jupyter/pyspark-notebook:x86_64-spark-3.5.0
+    ports:
+      - "4041:4040"
+      - "8889:8888"
+    volumes:
+      - ./data:/home/jovyan/data
+      - ./notebook-monitoring:/home/jovyan/work
+      - ./jars:/opt/spark/jars
